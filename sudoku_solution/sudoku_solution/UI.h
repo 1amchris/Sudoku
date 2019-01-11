@@ -3,8 +3,12 @@
 
 class UI
 {
-	std::string input(); 
-	void validate_input();
+	std::string _input; 
+	bool _validate_input();
+
+	char _get_the_letter(std::string);
+	char _get_the_number(std::string);
+	char _get_the_value(std::string);
 
 public:
 	UI();
