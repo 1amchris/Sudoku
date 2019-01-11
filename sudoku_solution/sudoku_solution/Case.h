@@ -10,10 +10,10 @@ class Case
 
 public:
 	Case();
-	Case(unsigned short);
+	Case(unsigned short int);
 	~Case();
 
-	void set_Value();
+	void set_Value(unsigned short int);
 	bool get_complete();
 	bool validate_Answer();
 };
