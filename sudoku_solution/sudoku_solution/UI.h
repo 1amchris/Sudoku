@@ -1,14 +1,16 @@
 #pragma once
 #include <string>
+#include "str_manip.h"
 
 class UI
 {
-	std::string _input; 
+	std::string _input;
+	std::string _formated_input;
 	bool _validate_input();
 
-	char _get_the_letter(std::string);
-	char _get_the_number(std::string);
-	char _get_the_value(std::string);
+	char _get_the_letter();
+	char _get_the_number();
+	char _get_the_value();
 
 public:
 	UI();

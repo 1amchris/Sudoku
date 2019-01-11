@@ -14,6 +14,6 @@ public:
 	~Grille();
 
 	bool get_complete();
-	void set_case_value(unsigned short int, unsigned short int, char);
+	void set_case_value(unsigned short int value, unsigned short int number, char letter);
 };
 

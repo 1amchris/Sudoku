@@ -14,7 +14,7 @@ public:
 	~Zone();
 
 	bool get_complete();
-	void set_case_value(unsigned short int, unsigned short int);
+	void set_case_value(unsigned short int value, unsigned short int index);
 
 	bool validate_cases();
 };

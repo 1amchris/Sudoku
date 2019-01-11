@@ -24,19 +24,19 @@ bool UI::_validate_input()
 	return has_letter && has_number && has_equal_sign && has_value && !has_left_over;
 }
 
-char UI::_get_the_letter(std::string this_input)
+char UI::_get_the_letter()
 {
 	// TODO _get_the_letter(std::string)
 	return 0;
 }
 
-char UI::_get_the_number(std::string this_input)
+char UI::_get_the_number()
 {
 	// TODO _get_the_number(std::string)
 	return 0;
 }
 
-char UI::_get_the_value(std::string this_input)
+char UI::_get_the_value()
 {
 	// TODO _get_the_value(std::string)
 	return 0;
@@ -55,10 +55,12 @@ void UI::collect_input()
 {
 	// get the input
 	std::cout << "Solution : ";
-	std::string getline_value;
-	getline(std::cin, getline_value);
+	getline(std::cin, _input);
 
-	// TODO remove any spaces
+	// upper any lower cases in _input
+	_input = str_manip::to_upper(_input);
+	// remove any spaces
+	_input = str_manip::remove_spaces(_input);
 
 	// TODO format the value to [A,I][1,9]=[1,9] : LetterNumber=Value
 	char the_letter = _get_the_letter();
