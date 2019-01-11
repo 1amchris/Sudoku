@@ -7,14 +7,16 @@ class Case
 	unsigned short int _answer;
 
 	bool _complete;
+	bool _locked;
 
 public:
 	Case();
-	Case(unsigned short int);
+	Case(unsigned short int value);
 	~Case();
 
-	void set_Value(unsigned short int);
+	void set_value(unsigned short int value);
+	void set_locked(bool value);
 	bool get_complete();
-	bool validate_Answer();
+	bool validate_answer();
 };
 

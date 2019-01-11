@@ -51,7 +51,7 @@ bool Zone::validate_cases()
 		// if the case's answer and value aren't
 		// the same, the function will return
 		// false as all numbers aren't identical.
-		if (!_cases[i].validate_Answer())
+		if (!_cases[i].validate_answer())
 			return false;
 	}
 	return true;

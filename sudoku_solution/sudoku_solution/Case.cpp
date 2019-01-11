@@ -5,6 +5,7 @@
 void Case::_init()
 {
 	_complete = false;
+	_locked = false;
 	_value = 0;
 }
 
@@ -25,9 +26,15 @@ Case::~Case()
 {
 }
 
-void Case::set_Value(unsigned short int value)
+void Case::set_value(unsigned short int value)
 {
-	_value = value;
+	if (!_locked)
+		_value = value;
+}
+
+void Case::set_locked(bool value)
+{
+	_locked = _value;
 }
 
 bool Case::get_complete()
@@ -35,7 +42,7 @@ bool Case::get_complete()
 	return _complete;
 }
 
-bool Case::validate_Answer()
+bool Case::validate_answer()
 {
 	return _value == _answer;
 }
