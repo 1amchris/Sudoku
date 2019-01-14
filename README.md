@@ -29,14 +29,14 @@ Sudoku/README.md
 	{
 		"1" : 
 		{ 
-		  "sudoku": "103...890",
+		  "puzzle": "103...890",
 		  "solution": "123...789",
 		  "time" : "0:0:0:0",
 		  "level": "easy"
 		},
 		"2" : 
 		{
-		  "sudoku": "400...098",
+		  "puzzle": "400...098",
 		  "solution": "467...198",
 		  "time": "0:0:12:24",
 		  "level": "easy"
@@ -51,13 +51,13 @@ Sudoku/README.md
 	2. All values must be 0 through 9 values. [0, 9]
 	3. All values BUT 0 will be displayed.
 	4. The values of the unsolved sudoku must be listed 
-	under the "sudoku" argument in the json file.
+	under the "puzzle" argument in the json file.
 
 	.../example2.json
 	{
 	"1" : 
 		{ 
-		  "sudoku": "1234567890ABCDEFGHI01234567890ABCDEFGHI01234567890ABCDEFGHI01234567890ABCDEFGHI01",
+		  "puzzle": "1234567890ABCDEFGHI01234567890ABCDEFGHI01234567890ABCDEFGHI01234567890ABCDEFGHI01",
 		  "solution": "123456789KABCDEFGHIK123456789KABCDEFGHIK123456789KABCDEFGHIK123456789KABCDEFGHIKK",
 		  "time" : "0:0:0:0",
 		  "level": "easy"

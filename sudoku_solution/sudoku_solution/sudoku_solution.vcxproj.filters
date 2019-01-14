@@ -21,20 +21,26 @@
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Grille.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="str_manip.cpp">
+      <Filter>cpp Files</Filter>
     </ClCompile>
     <ClCompile Include="Zone.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>cpp Files</Filter>
     </ClCompile>
     <ClCompile Include="Case.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>cpp Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Grille.cpp">
+      <Filter>cpp Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Sudoku.cpp">
+      <Filter>cpp Files</Filter>
     </ClCompile>
     <ClCompile Include="UI.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>cpp Files</Filter>
     </ClCompile>
-    <ClCompile Include="str_manip.cpp">
-      <Filter>Resource Files</Filter>
+    <ClCompile Include="Time.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -52,6 +58,12 @@
     </ClInclude>
     <ClInclude Include="str_manip.h">
       <Filter>Resource Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Sudoku.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Time.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
