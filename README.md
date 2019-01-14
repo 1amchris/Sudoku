@@ -1,7 +1,10 @@
-# Sudoku
-It's a sudoku
+Sudoku/README.md
 
-/*
+	Special thanks to nholmann for sharing his JSON library.
+	it is an MIT open sourced project which can be downloaded
+	at the following link: github.com/nholmann/json
+
+
 	 ------------- INTRODUCTION ------------- 
 
 	We  will begin by importing an existing sudoku.
@@ -43,11 +46,12 @@ It's a sudoku
 	
 	------------- FOR THE SUDOKU ------------- 
 
-	1. All values must be listed in a 81 characters long string.
-	2. All values must be 0 through 9 values.	[0, 9]
+	1. All values must be listed in a 81 characters 
+	long string.
+	2. All values must be 0 through 9 values. [0, 9]
 	3. All values BUT 0 will be displayed.
-	4. The values of the unsolved sudoku must be listed under
-	the "sudoku" argument in the json file.
+	4. The values of the unsolved sudoku must be listed 
+	under the "sudoku" argument in the json file.
 
 	.../example2.json
 	{
@@ -99,25 +103,26 @@ It's a sudoku
 
 	------------- FOR THE TIME -------------
 
-	The "time": "0:0:0:0" stands for "[days]:[hours]:[minutes]:[seconds]"
-	The time is listed as 0:0:0:0 when the sudoku has
-	never been attempted.
+	The "time": "0:0:0:0" reads "[days]:[hours]:[minutes]:[seconds]"
+	The time is listed as 0:0:0:0 when the sudoku 
+	has never been attempted.
 
 
 	------------- FOR THE LEVEL -------------
 
-	The "level" is arbitrary, anything can be written
-	there. It is solely as reference.
+	The "level" is arbitrary, anything can be 
+	written there. It is solely as reference.
 	anything is valid; please be nice ;P
 	
 	------------- CONCLUSION -------------
 
-	Congratulations on reaching the bottom, hope you
-	enjoy this your sudokus
+	Congratulations on reaching the bottom, hope 
+	you enjoy your sudokus in the command prompt.
 
 
 	For further programs and fun stuff, check out
 	our github pages:
 		github.com/1amchris/
 		github.com//
-	*/
+	
+	
