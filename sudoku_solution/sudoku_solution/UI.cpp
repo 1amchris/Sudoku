@@ -4,18 +4,28 @@
 
 bool UI::_validate_input()
 {
-	// TODO _validate_input()
-	// The four things that's needed
+	// it HAS_LETTER as the 1st character
 	bool has_letter = false;
+	if (_validate_letter(_input[0]))
+		has_letter = true;
+
+	// it HAS_NUMBER as the 2nd character
 	bool has_number = false;
+	if (_validate_number(_input[1]))
+		has_number = true;
+
+	// it HAS_EQUAL_SIGN as the 3rd character
 	bool has_equal_sign = false;
+	if (_input[2] == '=')
+		has_equal_sign = true;
+	
+	// it HAS_VALUE as the 4th character
 	bool has_value = false;
+	if (_validate_number(_input[3]))
+		has_value = true;
 
-
-
-
-	// if the string contains to much information
-	bool has_left_over = true;
+	// it has more than 4 character (it's too long, must be invalid)
+	bool has_left_over = 4 < _input.length();
 
 	// this function returns that the input
 	//		has a letter, a number, a '=' and a value
@@ -24,6 +34,16 @@ bool UI::_validate_input()
 	return has_letter && has_number && has_equal_sign && has_value && !has_left_over;
 }
 
+
+void UI::_init()
+{
+	_input = "";
+	_formated_input = "";
+	_console_spaces_before_sudoku = 3;
+	// There should be 81 white spaces in an empty sudoku
+	for (int i = 0; i < 81; i++)
+		_sudoku_values.push_back(' ');
+}
 
 char UI::_get_the_letter()
 {
@@ -70,13 +90,13 @@ bool UI::_validate_letters()
 	bool letters_ok = true;
 	for (unsigned int i = 0; i < _input.length(); i++) {
 		// it's a number
-		if ('0' <= _input[i] && _input[i] <= '9')
+		if (_validate_number(_input[i]))
 			continue;
 		// it's an equal sign
 		if (_input[i] == '=')
 			continue;
 		// it's a letter [A, I]
-		if ('A' <= _input[i] && _input[i] <= 'I')
+		if (_validate_letter(_input[i]))
 			continue;
 		// it's something else
 		else
@@ -89,18 +109,23 @@ bool UI::_validate_letters()
 	return letters_ok;
 }
 
+// validates that the input is within the [A, I] range
+bool UI::_validate_letter(char character) {
+	return 'A' <= character && character <= 'I';
+}
+
 bool UI::_validate_numbers()
 {
 	bool numbers_ok = true;
 	for (unsigned int i = 0; i < _input.length(); i++) {
 		// it's a letter
-		if ('A' <= _input[i] && _input[i] <= 'Z')
+		if (_validate_letter(_input[i]))
 			continue;
 		// it's an equal sign
 		if (_input[i] == '=')
 			continue;
 		// it's a number [1, 9]
-		if ('1' <= _input[i] && _input[i] <= '9')
+		if (_validate_number(_input[i]))
 			continue;
 		// it's something else
 		else
@@ -113,8 +138,20 @@ bool UI::_validate_numbers()
 	return numbers_ok;
 }
 
+// validates that the input is within the [A, I] range
+bool UI::_validate_number(char character) {
+	return '1' <= character && character <= '9';
+}
+
 UI::UI()
 {
+	_init();
+}
+
+UI::UI(std::string _sudoku)
+{
+	_init();
+	_sudoku_values = _sudoku;
 }
 
 
@@ -158,19 +195,67 @@ std::string UI::get_input()
 
 void UI::draw()
 {
-	// TODO draw the grid
-	std::cout << "Sudoku/UI.cpp/TODO draw the grid" << std::endl;
+/*
+This is a representation of what will be shown in the console
 
-	// The input is a string of 81 characters
+     ------- ------- -------
+   || X X X | X X X | X X X ||
+   || X X X | X X X | X X X ||
+   || X X X | X X X | X X X ||
+     ------- ------- -------
+   || X X X | X X X | X X X ||
+   || X X X | X X X | X X X ||
+   || X X X | X X X | X X X ||
+     ------- ------- -------
+   || X X X | X X X | X X X ||
+   || X X X | X X X | X X X ||
+   || X X X | X X X | X X X ||
+     ------- ------- -------
+*/
+	// draw the 9 lines
 	for (int i = 0; i < 9; i++) {
-		std::string line = " || ";
+		std::string line = "";
+		// how many spaces to the left of the sudoku
+		for (int j = 0; j < _console_spaces_before_sudoku; j++) {
+			line.push_back(' ');
+		}
+		// this is the outer left border
+		line += "|| ";
+
+		// for each 9 numbers in the row
 		for (int j = 0; j < 9; j++) {
+			// where is it?
 			unsigned short index = i * 9 + j;
+			// add the character to the line (the function returns what character to show)
+			//						e.g.: can easily be turned in to an alphabet-based sudoku
 			line += _character_to_display(_sudoku_values[index]);
 			line += " ";
-			if ((j+1) % 3 == 0)
+			// if we've added 3 character, add a separation as there are 3 "blocks"
+			if ((j + 1) % 3 == 0)
 				line += " | ";
 		}
+		// this is the outer right border
+		line += " ||";
 		std::cout << line << std::endl;
+
+		// if we've added 3 rows, add a separation
+		if ((i + 1) % 3 == 0) {
+			// how many spaces to the left of the sudoku
+			for (int j = 0; j < _console_spaces_before_sudoku; j++) {
+				std::cout << ' ';
+			}
+
+			// there are 3 "blocks"
+			for (int j = 0; j < 3; j++) {
+				// add a space for each '|'
+				std::cout << "  ";
+				for (int k = 0; k < 9; k++) {
+					std::cout << "-";
+				}
+
+				// we've met a '|'
+				std::cout << " ";
+			}
+		}
 	}
 }
