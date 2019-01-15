@@ -47,9 +47,38 @@ Time Time::operator=(Time other)
 	return new_time;
 }
 
+Time Time::format_string(std::string _string)
+{
+	// Replace all ':' by ' '
+	unsigned int index = _string.find_first_of(':');
+	while (0 <= index && index < _string.length()) {
+		_string[index] = ' ';
+		index = _string.find_first_of(':');
+	}
+
+	// assign each variables the value in the file
+	unsigned int new_days, new_hours, new_minutes, new_seconds;
+	std::stringstream ss;
+	if (_string == "0 0 0 0") {
+		new_days = 0;
+		new_hours = 0;
+		new_minutes = 0;
+		new_seconds = 0;
+	}
+	else
+	{
+		ss << _string;
+		ss >> new_days >> new_hours >> new_minutes >> new_seconds;
+	}
+	// create a new_Time object
+	Time new_Time(new_days, new_hours, new_minutes, new_seconds);
+
+	return new_Time;
+}
+
 std::string Time::time()
 {
-	format_time();
+	_format_time();
 
 	return str_manip::int_to_string(days) + ':' +
 		str_manip::int_to_string(hours) + ':' +

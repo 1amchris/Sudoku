@@ -1,6 +1,7 @@
 #pragma once
 #include <string>
 #include "str_manip.h"
+#include "Sudoku.h"
 
 class UI
 {
@@ -8,7 +9,7 @@ class UI
 
 	std::string _input;
 	std::string _formated_input;
-	std::string _sudoku_values;
+	Sudoku * this_sudoku;
 	unsigned int _console_spaces_before_sudoku;
 
 	char _get_the_letter();
@@ -25,7 +26,7 @@ class UI
 
 public:
 	UI();
-	UI(std::string _sudoku);
+	UI(Sudoku * new_sudoku);
 	~UI();
 
 	bool collect_input();

@@ -7,6 +7,7 @@ class Zone
 
 	Case _cases[9];
 	bool _complete;
+	void _update_complete();
 
 public:
 	Zone();

@@ -16,6 +16,7 @@ public :
 	Time(unsigned int days, unsigned int hours, unsigned int minutes, unsigned int seconds);
 
 	Time operator=(Time other);
+	static Time format_string(std::string string);
 	std::string time();
 
 };

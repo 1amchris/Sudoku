@@ -7,6 +7,7 @@ class Case
 	unsigned short int _answer;
 
 	bool _complete;
+	void _update_complete();
 	bool _locked;
 
 public:

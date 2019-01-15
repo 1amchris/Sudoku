@@ -9,6 +9,11 @@ void Case::_init()
 	_value = 0;
 }
 
+void Case::_update_complete()
+{
+	_complete = _value != '0';
+}
+
 Case::Case()
 {
 	_init();

@@ -41,8 +41,12 @@ void UI::_init()
 	_formated_input = "";
 	_console_spaces_before_sudoku = 3;
 	// There should be 81 white spaces in an empty sudoku
-	for (int i = 0; i < 81; i++)
-		_sudoku_values.push_back(' ');
+	for (int i = 0; i < 81; i++) {
+		this_sudoku->puzzle.push_back(' ');
+		this_sudoku->solution.push_back(' ');
+	}
+	this_sudoku->time = Time::format_string("0:0:0:0");
+	this_sudoku->level = "Default sudoku";
 }
 
 char UI::_get_the_letter()
@@ -148,10 +152,10 @@ UI::UI()
 	_init();
 }
 
-UI::UI(std::string _sudoku)
+UI::UI(Sudoku * new_sudoku)
 {
 	_init();
-	_sudoku_values = _sudoku;
+	this_sudoku = new_sudoku;
 }
 
 
@@ -162,7 +166,7 @@ UI::~UI()
 bool UI::collect_input()
 {
 	// get the input
-	std::cout << "Solution : ";
+	std::cout << "[A#=#] : ";
 	getline(std::cin, _input);
 
 	// up any lower cases in _input
@@ -228,10 +232,10 @@ This is a representation of what will be shown in the console
 			unsigned short index = i * 9 + j;
 			// add the character to the line (the function returns what character to show)
 			//						e.g.: can easily be turned in to an alphabet-based sudoku
-			line += _character_to_display(_sudoku_values[index]);
+			line += _character_to_display(this_sudoku->puzzle[index]);
 			line += " ";
 			// if we've added 3 character, add a separation as there are 3 "blocks"
-			if ((j + 1) % 3 == 0)
+			if ((j + 1) % 3 == 0 && j != 8)
 				line += " | ";
 		}
 		// this is the outer right border
@@ -256,6 +260,7 @@ This is a representation of what will be shown in the console
 				// we've met a '|'
 				std::cout << " ";
 			}
+			std::cout << std::endl;
 		}
 	}
 }

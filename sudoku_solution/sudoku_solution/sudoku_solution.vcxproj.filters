@@ -33,14 +33,14 @@
     <ClCompile Include="Grille.cpp">
       <Filter>cpp Files</Filter>
     </ClCompile>
-    <ClCompile Include="Sudoku.cpp">
-      <Filter>cpp Files</Filter>
-    </ClCompile>
     <ClCompile Include="UI.cpp">
       <Filter>cpp Files</Filter>
     </ClCompile>
     <ClCompile Include="Time.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>cpp Files</Filter>
+    </ClCompile>
+    <ClCompile Include="files.cpp">
+      <Filter>cpp Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -63,6 +63,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Time.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="files.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Settings.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -9,6 +9,19 @@ void Zone::_init()
 
 }
 
+void Zone::_update_complete()
+{
+	bool is_complete = true;
+	for (int i = 0; i < 9; i++) {
+		if (!_cases[i].get_complete()) {
+			is_complete = false;
+			break;
+		}
+	}
+
+	_complete = is_complete;
+}
+
 Zone::Zone()
 {
 	// init each case of the array to 0

@@ -80,6 +80,8 @@ Sudoku/README.md
 	
 	What's above is an example of what will be displayed
 	for the corresponding example2.json file
+	Note that the letters are not an appropriate value 
+	and are used for demonstration only
 
 
 	------------- FOR THE SOLUTION -------------
