@@ -19,5 +19,8 @@ public:
 
 	bool get_complete();
 	void set_case_value(unsigned short int value, unsigned short int number, char letter);
+
+	static char parse_value(std::string input);
+	static unsigned int parse_index(std::string input);
 };
 

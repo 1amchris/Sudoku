@@ -87,3 +87,18 @@ void Grille::set_case_value(unsigned short int value, unsigned short int number,
 	unsigned short int index_puzzle = number * 9 + letter_number;
 	_sudoku.puzzle[index_puzzle] = value;
 }
+
+char Grille::parse_value(std::string input) // [A1=1]
+{
+	// the value is the last character
+	return input[3];
+}
+
+unsigned int Grille::parse_index(std::string input) // [A1=1]
+{
+	char letter = input[0];
+	unsigned int letter_number = input[0] - 'A';
+	unsigned int number = input[1] - '0' - 1;
+
+	return letter_number*9 + number;
+}

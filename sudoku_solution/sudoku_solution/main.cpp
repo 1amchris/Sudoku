@@ -42,11 +42,12 @@ int main() {
 			system("cls");
 			this_UI.draw();
 	
-		} while (this_UI.collect_input());
+		} while (!this_UI.collect_input());
 
 		std::string _input = this_UI.get_input();
 		char _value = Grille::parse_value(_input);
-		unsigned int index = Grille::parse_index(_input);
+		unsigned int _index = Grille::parse_index(_input);
+		this_game_sudoku->puzzle[_index] = _value;
 	}
 
 

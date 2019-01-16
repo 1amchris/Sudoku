@@ -40,13 +40,6 @@ void UI::_init()
 	_input = "";
 	_formated_input = "";
 	_console_spaces_before_sudoku = 3;
-	// There should be 81 white spaces in an empty sudoku
-	for (int i = 0; i < 81; i++) {
-		this_sudoku->puzzle.push_back(' ');
-		this_sudoku->solution.push_back(' ');
-	}
-	this_sudoku->time = Time::format_string("0:0:0:0");
-	this_sudoku->level = "Default sudoku";
 }
 
 char UI::_get_the_letter()
@@ -150,6 +143,13 @@ bool UI::_validate_number(char character) {
 UI::UI()
 {
 	_init();
+	// There should be 81 white spaces in an empty sudoku
+	for (int i = 0; i < 81; i++) {
+		this_sudoku->puzzle.push_back(' ');
+		this_sudoku->solution.push_back(' ');
+	}
+	this_sudoku->time = Time::format_string("0:0:0:0");
+	this_sudoku->level = "Default sudoku";
 }
 
 UI::UI(Sudoku * new_sudoku)
@@ -189,12 +189,18 @@ bool UI::collect_input()
 	if (the_letter == '0' || the_number == '0' || the_value == '0')
 		return false;
 
+	_formated_input = "";
+	_formated_input.push_back(the_letter);
+	_formated_input.push_back(the_number);
+	_formated_input.push_back('=');
+	_formated_input.push_back(the_value);
+
 	return true;
 }
 
 std::string UI::get_input()
 {
-	return _input;
+	return _formated_input;
 }
 
 void UI::draw()
