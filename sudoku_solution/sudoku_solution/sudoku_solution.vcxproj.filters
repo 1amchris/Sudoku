@@ -24,15 +24,6 @@
     <ClCompile Include="str_manip.cpp">
       <Filter>cpp Files</Filter>
     </ClCompile>
-    <ClCompile Include="Zone.cpp">
-      <Filter>cpp Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Case.cpp">
-      <Filter>cpp Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Grille.cpp">
-      <Filter>cpp Files</Filter>
-    </ClCompile>
     <ClCompile Include="UI.cpp">
       <Filter>cpp Files</Filter>
     </ClCompile>
@@ -42,18 +33,12 @@
     <ClCompile Include="files.cpp">
       <Filter>cpp Files</Filter>
     </ClCompile>
+    <ClCompile Include="Menus.cpp">
+      <Filter>cpp Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Grille.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Case.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="UI.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Zone.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="str_manip.h">
@@ -69,6 +54,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Settings.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Menus.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

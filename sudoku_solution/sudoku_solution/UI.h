@@ -24,6 +24,8 @@ class UI
 	bool _validate_numbers();					// validates all characters
 	bool _validate_number(char character);		// validates only a character [1, 9]
 
+	void _draw_sudoku();
+
 public:
 	UI();
 	UI(Sudoku * new_sudoku);
@@ -33,5 +35,8 @@ public:
 	std::string get_input();
 
 	void draw();
+
+	static char parse_value(std::string input);
+	static unsigned int parse_index(std::string input);
 };
 

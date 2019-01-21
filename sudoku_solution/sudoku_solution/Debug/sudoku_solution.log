@@ -1,4 +1,2 @@
-﻿  UI.cpp
-c:\users\beaul\projects\github\sudoku\sudoku_solution\sudoku_solution\ui.cpp(229): warning C4018: '<': signed/unsigned mismatch
-c:\users\beaul\projects\github\sudoku\sudoku_solution\sudoku_solution\ui.cpp(254): warning C4018: '<': signed/unsigned mismatch
+﻿  Main_Menu.cpp
   sudoku_solution.vcxproj -> C:\Users\Beaul\Projects\Github\Sudoku\sudoku_solution\Debug\sudoku_solution.exe

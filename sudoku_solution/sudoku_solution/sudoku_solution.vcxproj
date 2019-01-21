@@ -115,25 +115,21 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Case.cpp" />
     <ClCompile Include="files.cpp" />
-    <ClCompile Include="Grille.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Menus.cpp" />
     <ClCompile Include="str_manip.cpp" />
     <ClCompile Include="Time.cpp" />
     <ClCompile Include="UI.cpp" />
-    <ClCompile Include="Zone.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Case.h" />
     <ClInclude Include="files.h" />
-    <ClInclude Include="Grille.h" />
+    <ClInclude Include="Menus.h" />
     <ClInclude Include="Settings.h" />
     <ClInclude Include="str_manip.h" />
     <ClInclude Include="Sudoku.h" />
     <ClInclude Include="Time.h" />
     <ClInclude Include="UI.h" />
-    <ClInclude Include="Zone.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

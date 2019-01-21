@@ -140,6 +140,29 @@ bool UI::_validate_number(char character) {
 	return '1' <= character && character <= '9';
 }
 
+void UI::_draw_sudoku()
+{
+	// TODO change letters A to actual game values
+	std::cout
+		<< ".....=====================================================....." << std::endl
+		<< ".....|...................................................|....." << std::endl
+		<< ".....|.........=================================.........|....." << std::endl
+		<< ".....|..........|.A..A..A.|.A..A..A.|.A..A..A.|..........|....." << std::endl
+		<< ".....|..........|.A..A..A.|.A..A..A.|.A..A..A.|..........|....." << std::endl
+		<< ".....|..........|.A..A..A.|.A..A..A.|.A..A..A.|..........|....." << std::endl
+		<< ".....|..........|-----------------------------|..........|....." << std::endl
+		<< ".....|..........|.A..A..A.|.A..A..A.|.A..A..A.|..........|....." << std::endl
+		<< ".....|..........|.A..A..A.|.A..A..A.|.A..A..A.|..........|....." << std::endl
+		<< ".....|..........|.A..A..A.|.A..A..A.|.A..A..A.|..........|....." << std::endl
+		<< ".....|..........|-----------------------------|..........|....." << std::endl
+		<< ".....|..........|.A..A..A.|.A..A..A.|.A..A..A.|..........|....." << std::endl
+		<< ".....|..........|.A..A..A.|.A..A..A.|.A..A..A.|..........|....." << std::endl
+		<< ".....|..........|.A..A..A.|.A..A..A.|.A..A..A.|..........|....." << std::endl
+		<< ".....|.........=================================.........|....." << std::endl
+		<< ".....|...................................................|....." << std::endl
+		<< ".....=====================================================....." << std::endl;
+}
+
 UI::UI()
 {
 	_init();
@@ -205,68 +228,20 @@ std::string UI::get_input()
 
 void UI::draw()
 {
-/*
-This is a representation of what will be shown in the console
 
-     ------- ------- -------
-   || X X X | X X X | X X X ||
-   || X X X | X X X | X X X ||
-   || X X X | X X X | X X X ||
-     ------- ------- -------
-   || X X X | X X X | X X X ||
-   || X X X | X X X | X X X ||
-   || X X X | X X X | X X X ||
-     ------- ------- -------
-   || X X X | X X X | X X X ||
-   || X X X | X X X | X X X ||
-   || X X X | X X X | X X X ||
-     ------- ------- -------
-*/
-	// draw the 9 lines
-	for (int i = 0; i < 9; i++) {
-		std::string line = "";
-		// how many spaces to the left of the sudoku
-		for (int j = 0; j < _console_spaces_before_sudoku; j++) {
-			line.push_back(' ');
-		}
-		// this is the outer left border
-		line += "|| ";
+}
 
-		// for each 9 numbers in the row
-		for (int j = 0; j < 9; j++) {
-			// where is it?
-			unsigned short index = i * 9 + j;
-			// add the character to the line (the function returns what character to show)
-			//						e.g.: can easily be turned in to an alphabet-based sudoku
-			line += _character_to_display(this_sudoku->puzzle[index]);
-			line += " ";
-			// if we've added 3 character, add a separation as there are 3 "blocks"
-			if ((j + 1) % 3 == 0 && j != 8)
-				line += " | ";
-		}
-		// this is the outer right border
-		line += " ||";
-		std::cout << line << std::endl;
+char UI::parse_value(std::string input) // [A1=1]
+{
+	// the value is the last character
+	return input[3];
+}
 
-		// if we've added 3 rows, add a separation
-		if ((i + 1) % 3 == 0) {
-			// how many spaces to the left of the sudoku
-			for (int j = 0; j < _console_spaces_before_sudoku; j++) {
-				std::cout << ' ';
-			}
+unsigned int UI::parse_index(std::string input) // [A1=1]
+{
+	char letter = input[0];
+	unsigned int letter_number = input[0] - 'A';
+	unsigned int number = input[1] - '0' - 1;
 
-			// there are 3 "blocks"
-			for (int j = 0; j < 3; j++) {
-				// add a space for each '|'
-				std::cout << "  ";
-				for (int k = 0; k < 9; k++) {
-					std::cout << "-";
-				}
-
-				// we've met a '|'
-				std::cout << " ";
-			}
-			std::cout << std::endl;
-		}
-	}
+	return letter_number * 9 + number;
 }

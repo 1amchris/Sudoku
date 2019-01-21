@@ -17,6 +17,38 @@ Sudoku/README.md
 	sudokus. Note that the path must include the JSON
 	file name.
 
+	 ------------- HOW TO PLAY ------------- 
+	
+	In order to play the game at the original settings,
+	simply launch the Suduko executable and you'll reach
+	the Main menu.
+	
+	In order to start the game, select "Play game". 
+	If a game has already been started, the game will 
+	display "Resume game".
+	
+	If you wish to learn how to play the game, select 
+	the "How to play" option. This option will go
+	through the fundamentals and the goals of the game.
+	
+	For any modifications and extra options, select the
+	"Settings" option. The settings option will contain
+	options that can be modified to best suit your game-
+	play. In this settings, you can also find advanced
+	settings such as the file directory where the sudokus
+	are saved and from where to read the next sudokus.
+	
+	Note that a few sudokus are included with the download
+	but if you wish to add your own sudokus you can do so
+	by following the guide below. The files supported to
+	this date are :
+		- JSON
+	Any files listed above can be read and the sudokus
+	will be played in the game. To make and add your
+	own sudokus, keep reading. :)
+	
+	If you wish to exit the game, select "Exit".
+
 
 	 ------------- THE JSON FILE ------------- 
 
