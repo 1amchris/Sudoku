@@ -157,6 +157,4 @@ Sudoku/README.md
 	For further programs and fun stuff, check out
 	our github pages:
 		github.com/1amchris/
-		github.com//
-	
 	
